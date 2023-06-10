@@ -1,19 +1,17 @@
 package StudentDomen;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import StudentDomen.Student;
 
-public class StudentSteam extends StudentGroup {
+public class StudentStream extends StudentGroup implements Iterable<Student> {
     private int streamID;
-    List<Student> stream;
+    List<Student> stream = new ArrayList<Student>();
 
-    public StudentSteam(List<Student> group, int idGroup, int streamID) {
+    public StudentStream(List<Student> group, int idGroup, int streamID) {
         super(group, idGroup);
         this.streamID = streamID;
-    }
-
-    public void ListStudentStream() {
-
     }
 
     public int getStreamID() {
@@ -39,9 +37,8 @@ public class StudentSteam extends StudentGroup {
                 " : " + super.group + '}';
     }
 
-    // @Override
-    // public Iterator<StudentGroup> iterator() {
-    // return new SSIterator(this);
-
-    // }
+    @Override
+    public Iterator<Student> iterator() {
+        return new SSIterator(this);
+    }
 }

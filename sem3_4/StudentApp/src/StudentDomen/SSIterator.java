@@ -1,29 +1,34 @@
 package StudentDomen;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-// public class SSIterator implements Iterator<Student>, Iterator<StudentGroup>
-// {
+public class SSIterator implements Iterator<Student> {
+    private int counter;
 
-// private int counter;
-// private final List<StudentSteam> stream;
+    List<Student> streamStudents = new ArrayList<Student>();
 
-// public SSIterator(StudentSteam studentSteam) {
-// this.stream = studentSteam;
-// }
+    /**
+     * @param studentStream
+     */
+    public SSIterator(StudentStream studentStream) {
+        this.streamStudents = streamStudents;
+        this.counter = 0;
 
-// @Override
-// public boolean hasNext() {
-// return counter < stream.size();
-// }
+    }
 
-// @Override
-// public Student next() {
-// if (!hasNext()) {
-// return null;
-// }
-// return stream.get(counter++);
-// }
+    @Override
+    public boolean hasNext() {
+        return counter < streamStudents.size();
+    }
 
-// }
+    @Override
+    public Student next() {
+        if (!hasNext()) {
+            return null;
+        }
+        return streamStudents.get(counter);
+    }
+
+}

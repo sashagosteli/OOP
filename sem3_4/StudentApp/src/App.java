@@ -1,3 +1,4 @@
+import StudentDomen.StudentStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -8,7 +9,8 @@ import StudentDomen.Person;
 import StudentDomen.PersonComparator;
 import StudentDomen.Student;
 import StudentDomen.StudentGroup;
-import StudentDomen.StudentSteam;
+
+import StudentDomen.StudentStream;
 import StudentDomen.Teacher;
 
 /**
@@ -22,6 +24,13 @@ import StudentDomen.Teacher;
  */
 public class App {
     public static void main(String[] args) throws Exception {
+        /**
+         * Домашнее задание номер два с Itarable не уверена что получилось, поскольку не
+         * поняла как надо сделать, сделала альтернативно как было на уроке в
+         * StudentGroup, но все же не до конца поняла смысл его применения тут вообще
+         * или не поняла задание просто
+         */
+
         // Person man = new Person("Денис", "Криницын", 35);
         // // System.out.println(man.toString());
 
@@ -56,15 +65,86 @@ public class App {
 
         StudentGroup group8787 = new StudentGroup(listStud2, 8787);
 
-        StudentSteam stream1 = new StudentSteam(listStud, 4335, 1);
+        Student s10 = new Student("Alexandra", "Gosteli", 30, 99);
+        Student s11 = new Student("Aria", "Gosteli", 19, 92);
+        Student s12 = new Student("Anna", "Ivanova", 23, 6);
+        Student s13 = new Student("Nika", "Kokosheva", 21, 88);
+        List<Student> listStud3 = new ArrayList<Student>();
+        listStud2.add(s10);
+        listStud2.add(s11);
+        listStud2.add(s12);
+        listStud2.add(s13);
 
-        StudentSteam stream2 = new StudentSteam(listStud2, 8787, 2);
+        StudentGroup group777 = new StudentGroup(listStud3, 777);
+
+        StudentStream streamgroup1 = new StudentStream(listStud, 4335, 1);
+
+        StudentStream streamgroup2 = new StudentStream(listStud2, 8787, 2);
+
+        StudentStream streamgroup3 = new StudentStream(listStud3, 777, 2);
+
+        // System.out.println(streamgroup1.getGroup());
+        // System.out.println(streamgroup2.getGroup());
+        // System.out.println(streamgroup3.getGroup());
+        int streamIDgroup1 = streamgroup1.getStreamID();
+        System.out.println(streamIDgroup1);
+        int streamIDgroup2 = streamgroup2.getStreamID();
+        System.out.println(streamIDgroup2);
+        int streamIDgroup3 = streamgroup3.getStreamID();
+        System.out.println(streamIDgroup3);
+        /**
+         * stream id for groups
+         */
+
+        List<Student> stream1 = new ArrayList<>();
+        if (streamgroup1.getStreamID() == 1) {
+            stream1.addAll(listStud);
+        }
+        if (streamgroup2.getStreamID() == 1) {
+            stream1.addAll(listStud2);
+        }
+        if (streamgroup3.getStreamID() == 1) {
+            stream1.addAll(listStud3);
+        }
+        List<Student> stream2 = new ArrayList<>();
+        if (streamgroup1.getStreamID() == 2) {
+            stream2.addAll(listStud);
+        }
+        if (streamgroup2.getStreamID() == 2) {
+            stream2.addAll(listStud2);
+        }
+        if (streamgroup3.getStreamID() == 2) {
+            stream2.addAll(listStud3);
+        }
+        System.out.println("Stream 1 : " + stream1);
+        System.out.println("Stream 2 : " + stream2);
+
+        Collections.sort(stream1);
+
+        System.out.println("Stream 1 : " + stream1);
+        Collections.sort(stream2);
+        System.out.println("Stream 2 : " + stream2);
+        // List<Student> listStudAll = new ArrayList<Student>();
+        // listStudAll.addAll(listStud);
+
+        // listStudAll.addAll(listStud2);
+
+        // listStudAll.addAll(listStud3);
+        // System.out.println(listStudAll);
+
+        // Collections.sort(listStudAll);
+
+        // System.out.println(group4335);
+        // через for не получилось вывести, потому что печатается через toString в
+        // потоке
+        // наверное
 
         // for (Student student : stream1) {
         // System.out.println(student.toString());
         // }
-        System.out.println(stream1);
-        System.out.println(stream2);
+
+        // System.out.println(streamgroup2);
+
         // System.out.println(group4335.toString());
 
         // for (Student stud : group4335) {

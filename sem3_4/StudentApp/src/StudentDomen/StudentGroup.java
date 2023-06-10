@@ -3,7 +3,7 @@ package StudentDomen;
 import java.util.Iterator;
 import java.util.List;
 
-public class StudentGroup implements Iterable<Student> {
+public class StudentGroup implements Comparable<StudentGroup> {
     List<Student> group;
     private int idGroup;
 
@@ -36,27 +36,36 @@ public class StudentGroup implements Iterable<Student> {
                 '}';
     }
 
+    // @Override
+    // public Iterator<Student> iterator() {
+
+    // return new Iterator<Student>() {
+    // private int counter;
+
+    // @Override
+    // public boolean hasNext() {
+    // return counter < group.size();
+    // }
+
+    // @Override
+    // public Student next() {
+    // if (!hasNext()) {
+    // return null;
+    // }
+    // return group.get(counter++);
+    // }
+
+    // };
+
     @Override
-    public Iterator<Student> iterator() {
-
-        return new Iterator<Student>() {
-            private int counter;
-
-            @Override
-            public boolean hasNext() {
-                return counter < group.size();
-            }
-
-            @Override
-            public Student next() {
-                if (!hasNext()) {
-                    return null;
-                }
-                return group.get(counter++);
-            }
-        };
-
-        // return new SGIterator(group);
+    public int compareTo(StudentGroup o) {
+        if (this.getGroup().size() == o.getGroup().size()) {
+            return 0;
+        }
+        if (this.getGroup().size() < o.getGroup().size()) {
+            return -1;
+        }
+        return 1;
     }
-
+    // return new SGIterator(group);
 }
