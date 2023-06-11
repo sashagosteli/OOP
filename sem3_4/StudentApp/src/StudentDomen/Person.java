@@ -3,19 +3,19 @@ package StudentDomen;
 public class Person {
     protected String firstName;
     protected String secondName;
-    protected int age;
+    protected static int age;
 
     /**
-   * Конструктор класса 
-   * @param firstName Имя
-   * @param secondName Фамилия
-   * @param age Возраст
-   */
-    public Person(String firstName, String secondName, int age) 
-    {
-        this.firstName=firstName;
-        this.secondName=secondName;
-        this.age=age;
+     * Конструктор класса
+     * 
+     * @param firstName  Имя
+     * @param secondName Фамилия
+     * @param age        Возраст
+     */
+    public Person(String firstName, String secondName, int age) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        Person.age = age;
     }
 
     public String getFirstName() {
@@ -34,12 +34,12 @@ public class Person {
         this.secondName = secondName;
     }
 
-    public int getAge() {
+    public static int getAge() {
         return age;
     }
 
     public void setAge(int age) {
-        this.age = age;
+        Person.age = age;
     }
 
     @Override
