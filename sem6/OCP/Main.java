@@ -4,6 +4,10 @@ import sem6.OCP.Classes.Vehicle;
 import sem6.OCP.Classes.Bus;
 import sem6.OCP.Classes.Car;
 
+/**
+ * Open-Closed Principle
+ * 
+ */
 class Main {
     public static void main(String[] args) {
         Car car = new Car(100, "Car");

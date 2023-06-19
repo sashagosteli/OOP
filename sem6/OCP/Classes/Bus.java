@@ -1,5 +1,8 @@
 package sem6.OCP.Classes;
 
+/**
+ * Separated for classes any type if vehicle, vehicle as parent
+ */
 public class Bus extends Vehicle {
     String typeBus = "Bus";
 
